@@ -1,0 +1,31 @@
+<% if (page.comments){ %>
+<section id="comment">
+  <h1 class="title"><%= __('comment') %></h1>
+  <% if (theme.comment_provider == "facebook") {
+      if (theme.facebook) { %>
+      <%- partial('_partial/facebook_comment', {fbConfig: theme.facebook}) %>
+      <% } %>
+  <% } else if(config.disqus_shortname) { %>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  <% } %>
+  <% if (theme.gitment.client_id && theme.gitment.client_secret && theme.gitment.enable ){ %>
+    <div id="gitment_container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+      var gitment = new Gitment({
+        id: '<%= page.title %>',
+        owner: '<%= theme.gitment.owner %>',
+        repo: '<%= theme.gitment.repo %>',
+        oauth: {
+          client_id: '<%= theme.gitment.client_id %>',
+          client_secret: '<%= theme.gitment.client_secret %>',
+        },
+      })
+      gitment.render('gitment_container')
+    </script>
+    <% } %>
+</section>
+<% } %>
