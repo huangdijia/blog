@@ -11,6 +11,8 @@ categories: 后端
 思路：
 > 经过了解，发现apk安装包原来只是zip的一个马甲，使用php的ZipArchive类可以对文件进行操作。
 
+<!--more-->
+
 实现代码：
 
 ~~~php

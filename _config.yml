@@ -4,9 +4,9 @@
 
 # Site
 title: 喵了个咪
-subtitle:
-description:
-keywords:
+subtitle: 喵了个咪的技术博客
+description: 深圳十年，依然买不起房
+keywords: 
 author: Deeka Hwang
 language:
   - zh-CN
@@ -83,7 +83,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: light
+theme: material-flow
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

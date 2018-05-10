@@ -7,6 +7,7 @@ categories: 后端
 
 项目中，用`preg_match`正则提取目标内容，死活有问题，代码测得死去活来。
 后来发现`pcre.backtrack_limit`的值默认只设了`100000`。
+<!--more-->
 解决办法：
 ~~~php
 ini_set(‘pcre.backtrack_limit’, 999999999);

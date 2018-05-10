@@ -4,6 +4,11 @@ date: 2012-12-13 13:32:02
 tags: [nginx, php, mysql, apache, configure, linux]
 categories: 后端
 ---
+
+在升级软件版本的时候，如果没有文档，那是相当痛苦的事情，编译参数是什么？
+
+<!--more-->
+
 1、nginx编译参数：
 
 ~~~bash

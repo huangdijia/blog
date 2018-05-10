@@ -5,8 +5,9 @@ tags: [nginx, sql, 注入, spam, user-agent, 溢出攻击]
 categories: 后端
 ---
 
-在配置文件添加如下字段即可
+废话不说，直接上配置，客官请看
 
+<!--more-->
 ~~~bash
 server {
     ## 禁SQL注入 Block SQL injections
