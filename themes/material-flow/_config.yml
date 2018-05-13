@@ -1,0 +1,63 @@
+# Search
+search: 
+  enable: true
+  service: hexo # google/hexo/algolia/azure/baidu
+  # google 
+  google_api_key:
+  google_engine_id:
+  # algolia
+  algolia_app_id:
+  algolia_api_key:
+  algolia_index_name:
+  # azure
+  azure_service_name:
+  azure_index_name:
+  azure_query_key:
+  # baidu
+  baidu_api_id:
+
+# friends link
+links:
+  - name: ClassicOldSong
+    url: https://ccoooss.com
+  - name: Frantic1048
+    url: https://frantic1048.logdown.com/
+  - name: Hclmaster
+    url: https://hclmaster.github.io/
+  - name: WANG Hsü-Tung
+    url: https://whst.github.io/
+
+# navigation menu
+menu:
+  - name: 首页
+    slug: home
+    url: /
+  - name: 归档
+    slug: archives
+    url: /archives
+  - name: 作品
+    slug: case
+    url: /case
+  - name: 关于
+    slug: about
+    url: /about
+
+# widgets
+widgets:
+  - about
+  - categories
+  - tagcloud
+  - links
+
+# Less
+less:
+  compress: true
+
+# use url, not username
+social:
+- slug: github
+  url: https://github.com/huangdijia
+- slug: twitter
+  url: https://twitter.com/huangdijia
+- slug: rss
+	url: /atom.xml
