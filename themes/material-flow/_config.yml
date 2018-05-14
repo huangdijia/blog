@@ -20,6 +20,14 @@ search:
 links:
   - name: 喵了个咪
     url: http://hdj.me
+  - name: 火丁笔记
+    url: https://huoding.com
+  - name: 神仙的仙居
+    url: https://xiezhenye.com
+  - name: 我是妖怪
+    url: http://liaoyulei.cn
+  - name: 风雪之隅
+    url: http://www.laruence.com
 
 # navigation menu
 menu:
