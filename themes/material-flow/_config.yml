@@ -50,6 +50,7 @@ widgets:
   - categories
   - tagcloud
   - links
+  - analysis
 
 # Less
 less:
