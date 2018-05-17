@@ -2,7 +2,7 @@
 title: 未知的恐惧——NULL
 date: 2013-4-27 18:16:32
 tags: [mysql, 'null']
-categories: [后端, 数据库]
+categories: 数据库
 ---
 
 ~~~sql
