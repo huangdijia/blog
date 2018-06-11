@@ -15,7 +15,7 @@ categories: 后端
 
 GitHub地址：https://github.com/laravel/framework/blob/5.2/src/Illuminate/Routing/Middleware/ThrottleRequests.php
 
-保存为 `app/Http/Middleware/ThrottleRequests.php`
+保存为 `app/Http/Middleware/ThrottleRequests.php`，别忘了修改 `namespace` 为 `App\Http\Middleware`，完整代码如下：
 
 ~~~php
 <?php
