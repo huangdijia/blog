@@ -49,7 +49,7 @@ array (
  */
 ~~~
 
-# 设置Laravel Session配置，为共享大基础
+# 设置Laravel Session配置，为共享准备
 
 ~~~php
 // config/session.php
