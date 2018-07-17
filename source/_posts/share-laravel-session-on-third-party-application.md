@@ -58,6 +58,18 @@ array (
 'domain'  => 'yourdomain.com',
 ~~~
 
+# 明文 Cookie
+
+很多时候 `Cookie` 是需要被前端童鞋使用的，但是默认情况下 `Laravel` 在响应头中添加的 `Cookie` 信息是加密过的，类似 `eyJpdiI6IjRwOFMyTkl2aGs2TGt4OUcxYXRNXC9BPT0iLCJ2YWx1ZSI6IkpHN0Fqb0ZSaDFxVHE0OHdFRXdXMHc9PSIsIm1hYyI6Ijc2MTljZDVmZDI1Mjg5MTk3NTBlZGM0MzUxMjUyZjQ5MzcxOGE1MWU4Y2ViZTBlYTY5YWRjZjNkZjUwNzNkMDEifQ%3D%3D`，这种时候就得将那些需要 明文 传输的 `Cookie` 加入到 白名单 中去：
+
+在 `/app/Http/Middleware/EncryptCookies.php` 中的 `$except` 数组中将其加入
+
+~~~php
+protected $except = [
+    'PHPSESSID',
+];
+~~~
+
 # 第三方应用兼容
 
 思路如下：
