@@ -88,7 +88,7 @@ class FdMapping
     }
 }
 
-$FdMapping = new FdMapping('192.168.8.25');
+$FdMapping = new FdMapping('127.0.0.1');
 $server    = new swoole_websocket_server("127.0.0.1", 9502);
 
 $server->on('open', function($server, $req) {
