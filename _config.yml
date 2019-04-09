@@ -5,7 +5,7 @@
 # Site
 title: 喵了个咪
 subtitle: 喵了个咪的技术博客
-description: 深圳十年，依然买不起房的屌丝
+description: 深圳十年
 keywords: 
 author: Deeka Hwang
 language:
@@ -116,6 +116,5 @@ gitment:
   enable: true
   owner: huangdijia
   repo: huangdijia.github.io
-  client_id: 6824969039680acfc325
-  client_secret: dd015561265771beaf3ff636bc658530697a7140
-
+  client_id: a1d239633e6fdfb97201
+  client_secret: 5e4cbc30dbc033718ac2ac7697775d333f4fe38c

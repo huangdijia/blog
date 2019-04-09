@@ -6,6 +6,7 @@
     "version": "3.7.1"
   },
   "dependencies": {
+    "gitment": "0.0.3",
     "hexo": "^3.2.0",
     "hexo-autoprefixer": "^1.0.0",
     "hexo-deployer-git": "^0.3.1",
