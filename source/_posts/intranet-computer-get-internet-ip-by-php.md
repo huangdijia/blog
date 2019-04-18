@@ -11,7 +11,8 @@ function getClientIp(){
     $ret = socket_connect($socket,'ns1.dnspod.net',6666);  
     $buf = socket_read($socket, 16);  
     socket_close($socket);  
-    return $buf;      
-} 
+    return $buf;
+}
 ~~~
+
 缺点：依赖第三方，效率与网络状况有关。
