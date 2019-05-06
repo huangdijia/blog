@@ -2,6 +2,7 @@
 title: 台湾身份证字号产生器
 date: 2019-04-26 15:33:38
 tags: [php]
+categories: 后端
 ---
 
 参考 [身份證字號產生器](https://people.debian.org/~paulliu/ROCid.html) 写了一份PHP版本
