@@ -70,7 +70,7 @@ protected $except = [
 ];
 ~~~
 
-# 第三方应用兼容
+# 第三方应用兼容 Laravel
 
 思路如下：
 
@@ -277,3 +277,222 @@ class SessionRedis
 ~~~
 
 最后，如果你有更好的方案，请留言给我，一起交流共同进步。
+
+# Laravel 兼容第三方应用
+
+以 `Memcache` 为例
+
+> 服务器记得编译 `memcache` 扩展
+
+## 增加 session 驱动
+
+~~~php
+<?php
+
+namespace App\Extensions;
+
+use Exception;
+use Memcache;
+
+class MemcacheSessionHandler implements \SessionHandlerInterface
+{
+    protected $handle      = null;
+    protected $sessionName = '';
+    protected $lifeTime;
+
+    public function __construct()
+    {
+        $this->sessionName = '';
+        $this->lifeTime    = config('session.lifetime');
+        $this->handle      = new Memcache;
+
+        collect(config('cache.stores.memcached.servers'))->each(function ($server) {
+            $this->handle->addServer($server['host'], $server['port'], true);
+        });
+    }
+
+    public function open($savePath, $sessionName)
+    {
+        return true;
+    }
+
+    public function close()
+    {
+        $this->handle->close();
+        $this->handle = null;
+
+        return true;
+    }
+
+    public function read($sessionId)
+    {
+        if (empty($sessionId)) {
+            return;
+        }
+
+        $data = $this->handle->get($this->sessionName . $sessionId);
+        // info($data, ['format' => 'php']);
+
+        // php -> laravel
+        $data = self::decode($data);
+        $data = serialize($data);
+        // info($data, ['format' => 'laravel']);
+
+        return $data;
+    }
+
+    public function write($sessionId, $data)
+    {
+        if (empty($sessionId)) {
+            return;
+        }
+
+        // info($data, ['format' => 'laravel']);
+
+        // laravel->php
+        $data = unserialize($data);
+        $data = self::encode($data);
+        // info($data, ['format' => 'php']);
+
+        return $this->handle->set($this->sessionName . $sessionId, $data, 0, $this->lifeTime);
+    }
+
+    public function destroy($sessionId)
+    {
+        if (empty($sessionId)) {
+            return;
+        }
+
+        return $this->handle->delete($this->sessionName . $sessionId);
+    }
+
+    public function gc($lifetime)
+    {
+        return true;
+    }
+
+    public static function encode($array, $safe = true, $method = '')
+    {
+        $method = empty($method) ? ini_get("session.serialize_handler") : $method;
+
+        switch ($method) {
+            case "php":
+                return self::serializePhp($array, $safe);
+                break;
+            case "php_binary":
+                return self::serializePhpbinary($array, $safe);
+                break;
+            default:
+                throw new Exception("Unsupported session.serialize_handler: " . $method . ". Supported: php, php_binary");
+        }
+    }
+
+    public static function serializePhp($array, $safe = true)
+    {
+        if ($safe) {
+            $array = unserialize(serialize($array));
+        }
+
+        $raw  = '';
+        $line = 0;
+        $keys = array_keys($array);
+
+        foreach ($keys as $key) {
+            $value = $array[$key];
+            $line++;
+            $raw .= $key . '|';
+            if (is_array($value) && isset($value['huge_recursion_blocker_we_hope'])) {
+                $raw .= 'R:' . $value['huge_recursion_blocker_we_hope'] . ';';
+            } else {
+                $raw .= serialize($value);
+            }
+            $array[$key] = ['huge_recursion_blocker_we_hope' => $line];
+        }
+
+        return $raw;
+    }
+
+    private static function serializePhpbinary($array, $safe = true)
+    {
+        return '';
+    }
+
+    public static function decode($session_data, $method = '')
+    {
+        $method = empty($method) ? ini_get("session.serialize_handler") : $method;
+
+        switch ($method) {
+            case "php":
+                return self::unserializePhp($session_data);
+                break;
+            case "php_binary":
+                return self::unserializePhpbinary($session_data);
+                break;
+            default:
+                throw new Exception("Unsupported session.serialize_handler: " . $method . ". Supported: php, php_binary");
+        }
+    }
+
+    private static function unserializePhp($session_data)
+    {
+        $return_data = [];
+        $offset      = 0;
+
+        while ($offset < strlen($session_data)) {
+            if (!strstr(substr($session_data, $offset), "|")) {
+                throw new Exception("Invalid data, remaining: " . substr($session_data, $offset));
+            }
+
+            $pos     = strpos($session_data, "|", $offset);
+            $num     = $pos - $offset;
+            $varname = substr($session_data, $offset, $num);
+            $offset += $num + 1;
+            $data                  = unserialize(substr($session_data, $offset));
+            $return_data[$varname] = $data;
+            $offset += strlen(serialize($data));
+        }
+
+        return $return_data;
+    }
+
+    private static function unserializePhpbinary($session_data)
+    {
+        $return_data = [];
+        $offset      = 0;
+
+        while ($offset < strlen($session_data)) {
+            $num = ord($session_data[$offset]);
+            $offset += 1;
+            $varname = substr($session_data, $offset, $num);
+            $offset += $num;
+            $data                  = unserialize(substr($session_data, $offset));
+            $return_data[$varname] = $data;
+            $offset += strlen(serialize($data));
+        }
+
+        return $return_data;
+    }
+}
+~~~
+
+## 扩展驱动
+
+编辑 app\AppServiceProvider.php，在 `boot()` 方法增加以下代码
+
+~~~php
+public function boot() {
+    Session::extend('memcache', function ($app) {
+        return new \App\Extensions\MemcacheSessionHandler;
+    });
+}
+~~~
+
+## 修改驱动
+
+编辑或增加 `.env`
+
+~~~env
+SESSION_DRIVER=memcache
+SESSION_LIFETIME=120
+SESSION_DOMAIN=.a.com
+~~~
