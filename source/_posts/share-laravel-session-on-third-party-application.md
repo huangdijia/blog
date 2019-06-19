@@ -276,8 +276,6 @@ class SessionRedis
 (new SessionRedis())->start();
 ~~~
 
-最后，如果你有更好的方案，请留言给我，一起交流共同进步。
-
 # Laravel 兼容第三方应用
 
 以 `Memcache` 为例
@@ -496,3 +494,5 @@ SESSION_DRIVER=memcache
 SESSION_LIFETIME=120
 SESSION_DOMAIN=.a.com
 ~~~
+
+最后，如果你有更好的方案，请留言给我，一起交流共同进步。
