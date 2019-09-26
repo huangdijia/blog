@@ -19,7 +19,7 @@ jobs:
       #   NEXT_VERSION: v7.3.0
       run: |
         git config --global user.name 'huangdijia'
-        git config --global user.email 'huangdijia@gmail.com'
+        git config --global user.email 'huangdijia@users.noreply.github.com'
         npm i -g hexo-cli
         npm i
     - name: deploy to github
