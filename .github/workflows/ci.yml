@@ -18,6 +18,8 @@ jobs:
       #   GH_ACTION_DEPLOY_KEY: ${{secrets.GH_ACTION_DEPLOY_KEY}}
       #   NEXT_VERSION: v7.3.0
       run: |
+        git config --global user.name 'huangdijia'
+        git config --global user.email 'huangdijia@gmail.com'
         npm i -g hexo-cli
         npm i
     - name: deploy to github
