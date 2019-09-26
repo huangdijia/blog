@@ -9,9 +9,19 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+          node-version: '10.x'
+    - name: prepare build env
+      # env:
+      #   GH_ACTION_DEPLOY_KEY: ${{secrets.GH_ACTION_DEPLOY_KEY}}
+      #   NEXT_VERSION: v7.3.0
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        npm i -g hexo-cli
+        npm i
+    - name: deploy to github
+      # env:
+          # HEXO_ALGOLIA_INDEXING_KEY: ${{secrets.HEXO_ALGOLIA_INDEXING_KEY}}
+      run: |
+          hexo generate && hexo algolia && hexo deploy
