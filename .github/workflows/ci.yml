@@ -11,35 +11,26 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-
-      # - name: Configuration environment
-      #   env:
-      #     GIT_USER: ${{secrets.HEXO_REPO_USER}}
-      #     GIT_EMAIL: ${{secrets.HEXO_REPO_EMAIL}}
-      #     GIT_PASSWORD: ${{secrets.HEXO_REPO_PASSWORD}}
-      #   run: |
-      #     git config --global user.name "$GIT_USER"
-      #     git config --global user.email "$GIT_EMAIL"
-      #     git config --global user.password "$GIT_PASSWORD"
-      #     # sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@github.com\/huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
-
+      - name: Configuration environment
+        env:
+          HEXO_REPO_RSA: ${{secrets.HEXO_REPO_RSA}}
+          HEXO_REPO_USER: ${{secrets.HEXO_REPO_USER}}
+          HEXO_REPO_EMAIL: ${{secrets.HEXO_REPO_EMAIL}}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$HEXO_REPO_RSA" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name "$HEXO_REPO_USER"
+          git config --global user.email "$HEXO_REPO_EMAIL"
       - name: Install dependencies
         run: |
           npm i -g hexo-cli
           npm i
-
-      - name: Hexo deploy
-        env:
-          GIT_USER: ${{secrets.HEXO_REPO_USER}}
-          GIT_EMAIL: ${{secrets.HEXO_REPO_EMAIL}}
-          GIT_PASSWORD: ${{secrets.HEXO_REPO_PASSWORD}}
+      - name: Deploy hexo
         run: |
-          git config --global user.name "$GIT_USER"
-          git config --global user.email "$GIT_EMAIL"
-          sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@github.com\/huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
           hexo g -d
