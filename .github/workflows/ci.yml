@@ -26,7 +26,7 @@ jobs:
           # git config --global user.name "$GIT_USER"
           # git config --global user.email "$GIT_EMAIL"
           # git config --global user.password "$GIT_PASSWORD"
-          sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
+          # sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
 
       - name: Install dependencies
         run: |
