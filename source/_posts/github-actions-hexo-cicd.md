@@ -39,7 +39,7 @@ ssh-keygen -f github-deploy-key # 三次回车即刻
 * `Name` 输入 `HEXO_DEPLOY_PRI`
 * `Value` 输入前面生成的私有 KEY `github-deploy-key` 的内容
 
-## 配置 huangdijia.github.io 仓库
+### 配置 huangdijia.github.io 仓库
 
 打开 `https://github.com/huangdijia/huangdijia.github.io/settings/keys`，点击 `Add deploy key`，分别在
 
