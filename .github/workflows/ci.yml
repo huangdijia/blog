@@ -15,7 +15,7 @@ jobs:
           node-version: '10.x'
     - name: prepare build env
       # env:
-      #   GH_ACTION_DEPLOY_KEY: ${{secrets.GH_ACTION_DEPLOY_KEY}}
+        # GH_ACTION_DEPLOY_KEY: ${{secrets.GH_ACTION_DEPLOY_KEY}}
       #   NEXT_VERSION: v7.3.0
       run: |
         git config --global user.name 'huangdijia'
@@ -26,4 +26,15 @@ jobs:
       # env:
           # HEXO_ALGOLIA_INDEXING_KEY: ${{secrets.HEXO_ALGOLIA_INDEXING_KEY}}
       run: |
+        mkdir -p $HOME/.ssh
+          touch "$HOME/.ssh/known_hosts"
+          
+          echo "${{ secrets.GH_ACTION_DEPLOY_KEY }}" > $HOME/.ssh/deploy_key
+          chmod 700 $HOME/.ssh
+          chmod 600 $HOME/.ssh/deploy_key
+          chmod 600 $HOME/.ssh/known_hosts
+          eval $(ssh-agent)
+          ssh-add $HOME/.ssh/deploy_key
+          
+          ssh-keyscan 47.52.**.** > $HOME/.ssh/known_hosts
           hexo generate && hexo algolia && hexo deploy
