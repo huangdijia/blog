@@ -19,17 +19,10 @@ jobs:
 
       - name: Configuration environment
         env:
-          # ID_RSA: ${{secrets.GITHUB_ACTION_HEXO_DEPLOY_KEY}}
-          # IP: curl ip.8591.com.tw | awk '{print $1}'
           GIT_USER: ${{secrets.HEXO_REPO_USER}}
           GIT_EMAIL: ${{secrets.HEXO_REPO_EMAIL}}
           GIT_PASSWORD: ${{secrets.HEXO_REPO_PASSWORD}}
         run: |
-          # mkdir -p ~/.ssh/
-          # echo "$ID_RSA" > ~/.ssh/id_rsa
-          # chmod 600 ~/.ssh/id_rsa
-          # ssh-keyscan github.com >> ~/.ssh/known_hosts
-          # ssh-keyscan "$IP" >> ~/.ssh/known_hosts
           git config --global user.name "$GIT_USER"
           git config --global user.email "$GIT_EMAIL"
           # git config --global user.password "$GIT_PASSWORD"
