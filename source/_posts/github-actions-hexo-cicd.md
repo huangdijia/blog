@@ -91,6 +91,18 @@ jobs:
           hexo g -d
 ~~~
 
+## 修改 _config.yml repo
+
+如果原来是 http 的，要改为 ssh 格式
+
+如：
+
+~~~yaml
+deploy:
+  # repo: https://github.com/huangdijia/huangdijia.github.io
+  repo: git@github.com:huangdijia/huangdijia.github.io.git
+~~~
+
 ## 享受成果
 
 在 `blog` 项目任意 push，在 `https://github.com/huangdijia/blog/actions` 都有响应的执行记录
