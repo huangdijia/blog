@@ -90,7 +90,6 @@ theme: material-flow
 deploy:
   type: git
   repo: https://github.com/huangdijia/huangdijia.github.io
-  # repo: git@github.com:huangdijia/huangdijia.github.io.git
   branch: master
 
 menu:
