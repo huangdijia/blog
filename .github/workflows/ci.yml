@@ -19,16 +19,20 @@ jobs:
 
       - name: Configuration environment
         env:
-          ID_RSA: ${{secrets.GITHUB_ACTION_HEXO_DEPLOY_KEY}}
-          IP: curl ip.8591.com.tw | awk '{print $1}'
+          # ID_RSA: ${{secrets.GITHUB_ACTION_HEXO_DEPLOY_KEY}}
+          # IP: curl ip.8591.com.tw | awk '{print $1}'
+          USER: ${{secrets.HEXO_REPO_USER}}
+          EMAIL: ${{secrets.HEXO_REPO_EMAIL}}
+          PASSWORD: ${{secrets.HEXO_REPO_PASSWORD}}
         run: |
-          mkdir -p ~/.ssh/
-          echo "$ID_RSA" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          ssh-keyscan "$IP" >> ~/.ssh/known_hosts
-          git config --global user.name 'huangdijia'
-          git config --global user.email 'huangdijia@gmail.com'
+          # mkdir -p ~/.ssh/
+          # echo "$ID_RSA" > ~/.ssh/id_rsa
+          # chmod 600 ~/.ssh/id_rsa
+          # ssh-keyscan github.com >> ~/.ssh/known_hosts
+          # ssh-keyscan "$IP" >> ~/.ssh/known_hosts
+          git config --global user.name "$USER"
+          git config --global user.email "$EMAIL"
+          git config --global user.password "$PASSWORD"
 
       - name: Install dependencies
         run: |
