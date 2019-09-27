@@ -37,4 +37,4 @@ jobs:
 
       - name: Deploy hexo
         run: |
-          hexo g -d
+          sudo hexo g -d
