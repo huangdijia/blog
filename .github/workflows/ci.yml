@@ -23,8 +23,8 @@ jobs:
     - name: Generate
       run: hexo clean && hexo g
     
-    - name: Handle img lazyload for RSS  
-      run: python3 atom_plus.py && chmod 755 public/atom.xml
+    # - name: Handle img lazyload for RSS  
+      # run: python3 atom_plus.py && chmod 755 public/atom.xml
       
     - name: Deploy
       run: |
