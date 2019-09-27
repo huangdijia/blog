@@ -33,7 +33,10 @@ jobs:
           npm i -g hexo-cli
           npm i
 
-      - name: Deploy hexo
+      - name: Deploy generate
         run: |
           hexo g
+
+      - name: Deploy hexo
+        run: |
           hexo d
