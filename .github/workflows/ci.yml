@@ -1,43 +1,34 @@
-name: CI
+name: Node CI
 
 on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        node-version: [10.x]
+
     steps:
-    - uses: actions/checkout@master
-      with:
-        submodules: true
-    - uses: actions/setup-node@master
-      with:
-        node-version: 8.x
-        
-    - name: Installation
-      run: |
-        npm install
-        npm install -g hexo-cli
-        
-    - name: Generate
-      run: hexo clean && hexo g
-    
-    # - name: Handle img lazyload for RSS  
-      # run: python3 atom_plus.py && chmod 755 public/atom.xml
-      
-    - name: Deploy
-      run: |
-        mkdir -p $HOME/.ssh
-        touch "$HOME/.ssh/known_hosts"
-        
-        echo "${{ secrets.GH_ACTION_DEPLOY_KEY }}" > $HOME/.ssh/deploy_key
-        chmod 700 $HOME/.ssh
-        chmod 600 $HOME/.ssh/deploy_key
-        chmod 600 $HOME/.ssh/known_hosts
-        eval $(ssh-agent)
-        ssh-add $HOME/.ssh/deploy_key
-        
-        ssh-keyscan 47.52.**.** > $HOME/.ssh/known_hosts
-        
-        hexo deploy
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Configuration environment
+        env:
+          ID_RSA: ${{secrets.GH_ACTION_DEPLOY_KEY}}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$ID_RSA" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.name 'huangdijia'
+          git config --global user.email 'huangdijia@gmail.com'
+      - name: Install dependencies
+        run: |
+          npm i -g hexo-cli
+          npm i
+      - name: Deploy hexo
+        run: |
+          hexo g -d
