@@ -26,8 +26,7 @@ jobs:
       #     git config --global user.name "$GIT_USER"
       #     git config --global user.email "$GIT_EMAIL"
       #     git config --global user.password "$GIT_PASSWORD"
-      #     # sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
-      #     git config --global credential.helper store
+      #     # sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@github.com\/huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
 
       - name: Install dependencies
         run: |
@@ -40,5 +39,7 @@ jobs:
           GIT_EMAIL: ${{secrets.HEXO_REPO_EMAIL}}
           GIT_PASSWORD: ${{secrets.HEXO_REPO_PASSWORD}}
         run: |
+          git config --global user.name "$GIT_USER"
+          git config --global user.email "$GIT_EMAIL"
           sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@github.com\/huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
           hexo g -d
