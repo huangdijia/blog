@@ -1,39 +1,22 @@
-name: HEXO CI
-
-on: [push]
-
+on: push
+name: Deploy
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x]
-
     steps:
-      - uses: actions/checkout@v1
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Configuration environment
-        env:
-          ID_RSA: ${{secrets.GITHUB_ACTION_HEXO_DEPLOY_KEY}}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$ID_RSA" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          ssh-keyscan 140.82.114.3 >> ~/.ssh/known_hosts
-          git config --global user.name 'huangdijia'
-          git config --global user.email 'huangdijia@gmail.com'
-
-      - name: Install dependencies
-        run: |
-          npm i -g hexo-cli
-          npm i
-
-      - name: Deploy hexo
-        run: |
-          hexo g -d
+    - name: Clean
+      uses: heowc/action-hexo@master
+      with:
+        args: clean
+    - name: Generate
+      uses: heowc/action-hexo@master
+      with:
+        args: generate
+    - name: Deploy
+      uses: heowc/action-hexo@master
+      env:
+        EMAIL: huangdijia@gmail.com
+        NAME: huangdijia
+      with:
+        args: deploy
