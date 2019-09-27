@@ -23,7 +23,7 @@ jobs:
           echo "$ID_RSA" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.name 'huangdijia@gmail.com'
+          git config --global user.name 'huangdijia'
           git config --global user.email 'huangdijia@gmail.com'
       - name: Install dependencies
         run: |
