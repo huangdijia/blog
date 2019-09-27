@@ -17,17 +17,17 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Configuration environment
-        env:
-          GIT_USER: ${{secrets.HEXO_REPO_USER}}
-          GIT_EMAIL: ${{secrets.HEXO_REPO_EMAIL}}
-          GIT_PASSWORD: ${{secrets.HEXO_REPO_PASSWORD}}
-        run: |
-          git config --global user.name "$GIT_USER"
-          git config --global user.email "$GIT_EMAIL"
-          git config --global user.password "$GIT_PASSWORD"
-          # sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
-          git config --global credential.helper store
+      # - name: Configuration environment
+      #   env:
+      #     GIT_USER: ${{secrets.HEXO_REPO_USER}}
+      #     GIT_EMAIL: ${{secrets.HEXO_REPO_EMAIL}}
+      #     GIT_PASSWORD: ${{secrets.HEXO_REPO_PASSWORD}}
+      #   run: |
+      #     git config --global user.name "$GIT_USER"
+      #     git config --global user.email "$GIT_EMAIL"
+      #     git config --global user.password "$GIT_PASSWORD"
+      #     # sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
+      #     git config --global credential.helper store
 
       - name: Install dependencies
         run: |
@@ -35,5 +35,10 @@ jobs:
           npm i
 
       - name: Hexo deploy
+        env:
+          GIT_USER: ${{secrets.HEXO_REPO_USER}}
+          GIT_EMAIL: ${{secrets.HEXO_REPO_EMAIL}}
+          GIT_PASSWORD: ${{secrets.HEXO_REPO_PASSWORD}}
         run: |
+          sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
           hexo g -d
