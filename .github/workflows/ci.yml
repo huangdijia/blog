@@ -40,5 +40,5 @@ jobs:
           GIT_EMAIL: ${{secrets.HEXO_REPO_EMAIL}}
           GIT_PASSWORD: ${{secrets.HEXO_REPO_PASSWORD}}
         run: |
-          sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
+          sed "s/https:\/\/github.com\/huangdijia\/huangdijia.github.io/https:\/\/$GIT_USER:$GIT_PASSWORD@github.com\/huangdijia\/huangdijia.github.io/" _config.yml > _config.yml
           hexo g -d
