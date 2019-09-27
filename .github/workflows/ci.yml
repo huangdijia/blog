@@ -17,7 +17,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Configuration environment
         env:
-          ID_RSA: ${{secrets.GH_ACTION_DEPLOY_KEY}}
+          ID_RSA: ${{secrets.GITHUB_ACTION_HEXO_DEPLOY_KEY}}
         run: |
           mkdir -p ~/.ssh/
           echo "$ID_RSA" > ~/.ssh/id_rsa
