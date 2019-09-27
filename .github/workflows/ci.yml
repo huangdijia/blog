@@ -35,10 +35,8 @@ jobs:
 
       - name: Deploy generate
         run: |
-          hexo g
+          hexo g -d
 
-      - name: Deploy hexo
-        run: |
-          # hexo deploy
-          cd .deploy_git
-          git push 
+      # - name: Deploy hexo
+      #   run: |
+      #     hexo deploy
