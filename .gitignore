@@ -6,3 +6,5 @@ node_modules/
 public/
 .deploy*/
 *.bak
+.github/github-deploy-key
+.github/github-deploy-key.pub

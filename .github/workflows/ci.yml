@@ -17,10 +17,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Configuration environment
         env:
-          HEXO_REPO_RSA: ${{secrets.HEXO_REPO_RSA}}
+          HEXO_DEPLOY_PRI: ${{secrets.HEXO_DEPLOY_PRI}}
         run: |
           mkdir -p ~/.ssh/
-          echo "$HEXO_REPO_RSA" > ~/.ssh/id_rsa
+          echo "$HEXO_DEPLOY_PRI" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.name "hdj"
