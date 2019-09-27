@@ -30,11 +30,11 @@ jobs:
           # chmod 600 ~/.ssh/id_rsa
           # ssh-keyscan github.com >> ~/.ssh/known_hosts
           # ssh-keyscan "$IP" >> ~/.ssh/known_hosts
-          echo "$USER"
-          echo "$EMAIL"
           git config --global user.name "$USER"
           git config --global user.email "$EMAIL"
           git config --global user.password "$PASSWORD"
+          git config user.name
+          git config user.email
 
       - name: Install dependencies
         run: |
@@ -43,4 +43,6 @@ jobs:
 
       - name: Deploy hexo
         run: |
+          git config user.name
+          git config user.email
           hexo g -d
