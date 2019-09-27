@@ -8,33 +8,36 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
+    - uses: actions/checkout@master
       with:
-          node-version: '10.x'
-    - name: prepare build env
-      # env:
-        # GH_ACTION_DEPLOY_KEY: ${{secrets.GH_ACTION_DEPLOY_KEY}}
-      #   NEXT_VERSION: v7.3.0
+        submodules: true
+    - uses: actions/setup-node@master
+      with:
+        node-version: 8.x
+        
+    - name: Installation
       run: |
-        git config --global user.name 'huangdijia'
-        git config --global user.email 'huangdijia@users.noreply.github.com'
-        npm i -g hexo-cli
-        npm i
-    - name: deploy to github
-      # env:
-          # HEXO_ALGOLIA_INDEXING_KEY: ${{secrets.HEXO_ALGOLIA_INDEXING_KEY}}
+        npm install
+        npm install -g hexo-cli
+        
+    - name: Generate
+      run: hexo clean && hexo g
+    
+    - name: Handle img lazyload for RSS  
+      run: python3 atom_plus.py && chmod 755 public/atom.xml
+      
+    - name: Deploy
       run: |
         mkdir -p $HOME/.ssh
-          touch "$HOME/.ssh/known_hosts"
-          
-          echo "${{ secrets.GH_ACTION_DEPLOY_KEY }}" > $HOME/.ssh/deploy_key
-          chmod 700 $HOME/.ssh
-          chmod 600 $HOME/.ssh/deploy_key
-          chmod 600 $HOME/.ssh/known_hosts
-          eval $(ssh-agent)
-          ssh-add $HOME/.ssh/deploy_key
-          
-          ssh-keyscan 47.52.**.** > $HOME/.ssh/known_hosts
-          hexo generate && hexo algolia && hexo deploy
+        touch "$HOME/.ssh/known_hosts"
+        
+        echo "${{ secrets.GH_ACTION_DEPLOY_KEY }}" > $HOME/.ssh/deploy_key
+        chmod 700 $HOME/.ssh
+        chmod 600 $HOME/.ssh/deploy_key
+        chmod 600 $HOME/.ssh/known_hosts
+        eval $(ssh-agent)
+        ssh-add $HOME/.ssh/deploy_key
+        
+        ssh-keyscan 47.52.**.** > $HOME/.ssh/known_hosts
+        
+        hexo deploy
