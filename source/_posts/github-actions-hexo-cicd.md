@@ -15,8 +15,8 @@ categories: 后端
 
 我先介绍一下我的项目背景：
 
-* https://github.com/huangdijia/blog 用于存放 hexo 生成的项目，可以理解成源码
-* https://github.com/huangdijia/huangdijia.github.io 存放 hexo 编译后的静态文件，也是我的博客页面
+* `https://github.com/huangdijia/blog` 用于存放 hexo 生成的项目，可以理解成源码
+* `https://github.com/huangdijia/huangdijia.github.io` 存放 hexo 编译后的静态文件，也是我的博客页面
 
 > 以下说明都是以我的两个项目为例子
 
