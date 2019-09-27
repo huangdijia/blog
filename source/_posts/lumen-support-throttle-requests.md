@@ -11,9 +11,9 @@ categories: 后端
 
 <!--more-->
 
-# 从 Laravel 移植
+## 从 Laravel 移植
 
-GitHub地址：https://github.com/laravel/framework/blob/5.2/src/Illuminate/Routing/Middleware/ThrottleRequests.php
+[GitHub地址](https://github.com/laravel/framework/blob/5.2/src/Illuminate/Routing/Middleware/ThrottleRequests.php)
 
 保存为 `app/Http/Middleware/ThrottleRequests.php`，别忘了修改 `namespace` 为 `App\Http\Middleware`，完整代码如下：
 
@@ -154,7 +154,7 @@ class ThrottleRequests
 }
 ~~~
 
-# 注册中间件
+## 注册中间件
 
 找到 `bootstrap/app.php` 文件，添加：
 
@@ -164,13 +164,13 @@ $app->routeMiddleware([
 ]);
 ~~~
 
-# 更新 composer
+## 更新 composer
 
 ~~~bash
 composer dump-autoload
 ~~~
 
-# 测试
+## 测试
 
 找到 `routes/web.php`，修改 or 添加
 

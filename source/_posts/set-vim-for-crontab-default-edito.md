@@ -13,4 +13,4 @@ categories: 后端
 echo "export EDITOR=/usr/bin/vim" >> .bashrc
 ~~~
 
-然后重新打开终端，输入crontab -e，发现已经默认使用vim了。
+然后重新打开终端，输入 `crontab -e`，发现已经默认使用 `vim` 了。

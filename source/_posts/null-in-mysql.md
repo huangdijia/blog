@@ -6,7 +6,7 @@ categories: 数据库
 ---
 
 ~~~sql
-SELECT 
+SELECT
     NULL = 0,
     NULL = 12345,
     NULL <> 12345,
@@ -27,7 +27,7 @@ SELECT
 
 下面跟大家分析一下原因：
 
-![](/images/null-in-mysql.png)
+![图片](/images/null-in-mysql.png)
 
 那么在应用中如何避免NULL带来的一些困扰呢？
 

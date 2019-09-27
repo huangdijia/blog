@@ -75,4 +75,4 @@ alias use-php72='unlink-php; brew link --overwrite --force php@7.2 && php -v'
 alias use-php73='unlink-php; brew link --overwrite --force php && php -v'
 ~~~
 
-后面可以通过 use-php[version] 随意切换版本，或者直接用 php[version] 执行。
+后面可以通过 `use-php[version]` 随意切换版本，或者直接用 `php[version]` 执行。

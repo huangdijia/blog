@@ -41,4 +41,4 @@ file_put_contents('log.txt', date('Y-m-d H:i:s') . " 提取图片\n", FILE_APPEN
 
 代码里用`sleep`模拟一些耗时的操作，浏览时没有被堵塞，程序却都执行了，具体看日志。
 
-末了给您提个醒，`Yahoo`在`Best Practices for Speeding Up Your Web Site`中提到了`Flush the Buffer Early`，也就是利用PHP中的flush方法把内容尽快发到客户端去，虽然表面上它和本文介绍的fastcgi_finish_request有些许的类似，但本质上完全不同，别混淆了。
+末了给您提个醒，`Yahoo` 在 `Best Practices for Speeding Up Your Web Site` 中提到了 `Flush the Buffer Early`，也就是利用PHP中的flush方法把内容尽快发到客户端去，虽然表面上它和本文介绍的fastcgi_finish_request有些许的类似，但本质上完全不同，别混淆了。

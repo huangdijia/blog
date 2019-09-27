@@ -24,6 +24,7 @@ upstream backend {
 3、ip_hash
 每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。
 例如：
+
 ~~~bash
 upstream backend {
     ip_hash;
@@ -34,6 +35,7 @@ upstream backend {
 
 4、fair（第三方）
 按后端服务器的响应时间来分配请求，响应时间短的优先分配。
+
 ~~~bash
 upstream backend {
     server server1.linuxany.com;
@@ -47,6 +49,7 @@ upstream backend {
 按访问url的hash结果来分配请求，使每个url定向到同一个后端服务器，后端服务器为缓存时比较有效。
 
 例：在upstream中加入hash语句，server语句中不能写入weight等其他的参数，hash_method是使用的hash算法
+
 ~~~bash
 upstream backend {
     server squid1:3128;
@@ -55,6 +58,7 @@ upstream backend {
     hash_method crc32;
 }
 ~~~
+
 > 定义负载均衡设备的Ip及设备状态
 
 ~~~bash
@@ -68,9 +72,10 @@ upstream backend{
 ~~~
 
 在需要使用负载均衡的server中增加
-> proxy_pass http://bakend/;
+> proxy_pass `http://bakend/`;
 
 每个设备的状态设置为:
+
 - down 表示单前的server暂时不参与负载
 - weight 默认为1.weight越大，负载的权重就越大。
 - max_fails ：允许请求失败的次数默认为1.当超过最大次数时，返回proxy_next_upstream 模块定义的错误

@@ -9,7 +9,7 @@ categories: 前端
 
 <!--more-->
 
-# 身份证号码有效性验证
+## 身份证号码有效性验证
 
 JavaScript 代码:
 
@@ -85,7 +85,7 @@ function isIDCard(idcard) {
 }
 ~~~
 
-# 从身份证号码中获取相关信息，比如生日、省
+## 从身份证号码中获取相关信息，比如生日、省
 
 JavaScript 代码:
 
@@ -115,7 +115,7 @@ function checkID(ID) {
 }
 ~~~
 
-# 验证香港身份证的格式或真实性
+## 验证香港身份证的格式或真实性
 
 JavaScript 代码:
 

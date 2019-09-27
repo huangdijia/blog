@@ -26,18 +26,18 @@ if(false===file_put_contents($file, file_get_contents($apk))){
 }
 // 打开临时文件
 $zip    = new ZipArchive();
-$zip->open($file); 
+$zip->open($file);
 // 添加文件
 // 由于apk限定只能修改此目录内的文件，否则会报无效apk包
 $zip->addFromString('META-INF/extends.json', json_encode(array('author'=>'deeka')));
 // 关闭zip
 $zip->close();
 // 下载文件
-header("Content-Type: application/zip"); 
-header("Content-Length: " . filesize($file)); 
-header("Content-Disposition: attachment; filename=\"{$apk}\""); 
+header("Content-Type: application/zip");
+header("Content-Length: " . filesize($file));
+header("Content-Disposition: attachment; filename=\"{$apk}\"");
 // 输出二进制流
 readfile($file);
 // 删除临时文件
-unlink($file); 
+unlink($file);
 ~~~

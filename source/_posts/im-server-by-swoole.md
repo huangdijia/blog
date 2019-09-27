@@ -5,7 +5,7 @@ tags: [swoole, chat]
 categories: 后端
 ---
 
-# 需求背景
+## 需求背景
 
 就技术面而言，即时通讯对很多人或公司来说已经没有什么门槛，技术方案有如雨后春笋，也各有千秋，也有不少专业提供第三方服务的公司，如`云信`、`融云`等等，几个大厂（`阿里云`、`腾讯云`）也有提供云服务。
 
@@ -25,7 +25,7 @@ TODO
 > * 支持消息广播
 > * 支持离线消息
 
-# 服务端
+## 服务端
 
 ~~~php
 <?php
@@ -170,7 +170,7 @@ $server->on('close', function($server, $fd) use ($FdMapping) {
 $server->start();
 ~~~
 
-# 客户端
+## 客户端
 
 ~~~javascript
 var ws = new WebSocket("ws://127.0.0.1:9502");

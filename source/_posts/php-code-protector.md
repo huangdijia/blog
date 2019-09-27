@@ -8,6 +8,7 @@ categories: 后端
 
 <!--more-->
 index.php源码
+
 ~~~php
 <?php
 if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -112,6 +113,7 @@ html,body, textarea{ font-size:13px;}
 ~~~
 
 PHPCodeProtector.class.php源码：
+
 ~~~php
 <?php
 // PHP源码加密类 v1.0

@@ -13,9 +13,7 @@ categories: 数据库
 
 <!--more-->
 
-详见mysql手册 `Server Command Options` 一节中 `--secure-auth` 选项的说明：
-
-http://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_secure-auth
+详见mysql手册 `Server Command Options` 一节中 `--secure-auth` 选项的[说明](http://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_secure-auth)
 
 解决方法有如下两种：
 

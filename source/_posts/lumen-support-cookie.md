@@ -5,7 +5,7 @@ tags: [lumen, cookie, php, composer]
 categories: 后端
 ---
 
-官方介绍：https://lumen.laravel-china.org/docs/5.3/authentication
+[官方介绍](https://lumen.laravel-china.org/docs/5.3/authentication)
 
 > Lumen 虽然与 Laravel 使用了相同的底层类库实现，但是因 Lumen 面向的是无状态 API 的开发，不支持 session，所以默认的配置不同。Lumen 必须使用无状态的机制来实现，如 API 令牌（Token）。
 
@@ -13,13 +13,13 @@ categories: 后端
 
 <!--more-->
 
-# 安装Cookie服务提供者
+## 安装Cookie服务提供者
 
 ~~~bash
 composer require illuminate/cookie
 ~~~
 
-# 增加session配置
+## 增加session配置
 
 ~~~php
 return [
@@ -40,7 +40,7 @@ return [
 ];
 ~~~
 
-# 注册Cookie服务提供者
+## 注册Cookie服务提供者
 
 > 修改bootstrap/app.php，增加以下内容
 
@@ -51,7 +51,7 @@ $app->register(Illuminate\Cookie\CookieServiceProvider::class);
 $app->configure('session');
 ~~~
 
-# 测试
+## 测试
 
 编辑routes/web.php
 

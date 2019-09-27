@@ -11,13 +11,15 @@ Laravel 框架越来越被PHP开发者青睐，被应用得越来越广泛，大
 
 <!--more-->
 
-![](https://upload-images.jianshu.io/upload_images/4739005-9132cb20eefd0942.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)
+![图片](https://upload-images.jianshu.io/upload_images/4739005-9132cb20eefd0942.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)
 
 一鼓作气，写完了发现`Session`不兼容，去Google百度了一下，也没找到什么好方案，没办法自己分析一下。
 
-# 先看一下Laravel写的Session是什么
+## 先看一下Laravel写的Session是什么
 
-> s:207:"a:4:{s:3:"abc";i:1531800464;s:6:"_token";s:40:"SPhvkWipry9tCxLrU431ueWE8iHBaMkOMU0acQV6";s:9:"_previous";a:1:{s:3:"url";s:26:"http://yourdomain.com/";}s:6:"_flash";a:2:{s:3:"old";a:0:{}s:3:"new";a:0:{}}}";
+~~~php
+s:207:"a:4:{s:3:"abc";i:1531800464;s:6:"_token";s:40:"SPhvkWipry9tCxLrU431ueWE8iHBaMkOMU0acQV6";s:9:"_previous";a:1:{s:3:"url";s:26:"http://yourdomain.com/";}s:6:"_flash";a:2:{s:3:"old";a:0:{}s:3:"new";a:0:{}}}";
+~~~
 
 是不是很眼熟？没错，是PHP的序列化，要注意的是2次序列化。我们来验证一下：
 
@@ -49,7 +51,7 @@ array (
  */
 ~~~
 
-# 设置Laravel Session配置，为共享准备
+## 设置Laravel Session配置，为共享准备
 
 ~~~php
 // config/session.php
@@ -58,7 +60,7 @@ array (
 'domain'  => 'yourdomain.com',
 ~~~
 
-# 明文 Cookie
+## 明文 Cookie
 
 很多时候 `Cookie` 是需要被前端童鞋使用的，但是默认情况下 `Laravel` 在响应头中添加的 `Cookie` 信息是加密过的，类似 `eyJpdiI6IjRwOFMyTkl2aGs2TGt4OUcxYXRNXC9BPT0iLCJ2YWx1ZSI6IkpHN0Fqb0ZSaDFxVHE0OHdFRXdXMHc9PSIsIm1hYyI6Ijc2MTljZDVmZDI1Mjg5MTk3NTBlZGM0MzUxMjUyZjQ5MzcxOGE1MWU4Y2ViZTBlYTY5YWRjZjNkZjUwNzNkMDEifQ%3D%3D`，这种时候就得将那些需要 明文 传输的 `Cookie` 加入到 白名单 中去：
 
@@ -70,7 +72,7 @@ protected $except = [
 ];
 ~~~
 
-# 第三方应用兼容 Laravel
+## 第三方应用兼容 Laravel
 
 思路如下：
 
@@ -82,7 +84,7 @@ protected $except = [
 
 > PHP系列化数据->`SessionSerializer::decode()`（得到数组）->`serialize()` * 2->写入Redis
 
-![](https://i.imgflip.com/1issnv.jpg)
+![图片](https://i.imgflip.com/1issnv.jpg)
 
 ~~~php
 // PHP SESSION 序列化器
@@ -276,13 +278,13 @@ class SessionRedis
 (new SessionRedis())->start();
 ~~~
 
-# Laravel 兼容第三方应用
+## Laravel 兼容第三方应用
 
 以 `Memcache` 为例
 
 > 服务器记得编译 `memcache` 扩展
 
-## 增加 session 驱动
+### 增加 session 驱动
 
 ~~~php
 <?php
@@ -473,7 +475,7 @@ class MemcacheSessionHandler implements \SessionHandlerInterface
 }
 ~~~
 
-## 扩展驱动
+### 扩展驱动
 
 编辑 app\AppServiceProvider.php，在 `boot()` 方法增加以下代码
 
@@ -485,7 +487,7 @@ public function boot() {
 }
 ~~~
 
-## 修改驱动
+### 修改驱动
 
 编辑或增加 `.env`
 

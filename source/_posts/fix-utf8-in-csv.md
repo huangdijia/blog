@@ -11,7 +11,7 @@ categories: 后端
 
 <!--more-->
 
-# PHP处理方式
+## PHP处理方式
 
 ~~~php
 // utf8
@@ -22,7 +22,7 @@ fputcsv($fp, ['解决乱码']);
 fclose($fp);
 ~~~
 
-# 命令行处理方式
+## 命令行处理方式
 
 ~~~bash
 printf '\xEF\xBB\xBF’ > tmp.csv
@@ -30,4 +30,4 @@ cat your.csv >> tmp.csv
 mv tmp.csv your.csv
 ~~~
 
-你get√到了吗？
+你 `get√` 到了吗？
