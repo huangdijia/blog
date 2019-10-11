@@ -1,7 +1,8 @@
 ---
-title: install-memcache-for-php7.x
+title: 为 PHP7.x 安装 memcache 扩展
 date: 2019-10-11 16:46:58
-tags:
+tags: [PHP, Memcache]
+categories: 后端
 ---
 
 [PHP Extension - Memcache module with support of newer PHP 7.0-7.3](https://github.com/websupport-sk/pecl-memcache)
