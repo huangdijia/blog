@@ -18,7 +18,7 @@ tags:
 - [小白软件](http://www.xiaobai.com)
 - [小白软件宝库](http://baoku.xiaobai.com)
 - [茂名广视网](http://www.mmgsw.com)
-- [宝物交易网](http://www.8591.com.tw)
+- [宝物交易网TW](http://www.8591.com.tw)
 - [宝物交易网HK](http://www.8591.com.hk)
 - [100室内设计](http://www.100.com.tw)
 
