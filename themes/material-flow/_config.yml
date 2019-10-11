@@ -38,8 +38,8 @@ menu:
     slug: archives
     url: /archives
   - name: 作品
-    slug: case
-    url: /case
+    slug: cases
+    url: /cases
   - name: 关于
     slug: about
     url: /about
