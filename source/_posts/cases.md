@@ -34,17 +34,11 @@ tags:
 ## 参与开源项目
 
 - [ThinkPHP](https://github.com/top-think/think)
+
+## Larave 扩展包
+
 - [Laravel Trigger](https://github.com/huangdijia/laravel-trigger)
 - [Laravel Youdu](https://github.com/huangdijia/laravel-youdu)
-
-## 其他
-
-- ~~wnmp集成环境~~
-- [PHP君子加密](/php-code-protector/)
-- ~~PHP抓取视频缩略图类VedioUrlParser(支持优酷、土豆、酷六、56、乐视、搜狐)~~
-- [jQuery插件jsConfirm-1.0](https://gitee.com/deeka/jsComfirm)
-- [基于jQuery的input提示信息插件inputDefault](https://gitee.com/deeka/inputDefault)
-- [基于jQuery的无刷新上传插件iframeupload](https://gitee.com/deeka/iframeupload)
 - [Laravel Ipip](https://github.com/huangdijia/laravel-ipip)
 - [Laravel Ssdb](https://github.com/huangdijia/laravel-ssdb)
 - [Laravel Accessyou](https://github.com/huangdijia/laravel-accessyou)
@@ -54,3 +48,12 @@ tags:
 - [Laravel Twsms](https://github.com/huangdijia/laravel-twsms)
 - [Laravel Icomet](https://github.com/huangdijia/laravel-icomet)
 - [Laravel Gateway Worker](https://github.com/huangdijia/laravel-gateway-worker)
+
+## 其他
+
+- ~~wnmp集成环境~~
+- [PHP君子加密](/php-code-protector/)
+- ~~PHP抓取视频缩略图类VedioUrlParser(支持优酷、土豆、酷六、56、乐视、搜狐)~~
+- [jQuery插件jsConfirm-1.0](https://gitee.com/deeka/jsComfirm)
+- [基于jQuery的input提示信息插件inputDefault](https://gitee.com/deeka/inputDefault)
+- [基于jQuery的无刷新上传插件iframeupload](https://gitee.com/deeka/iframeupload)
