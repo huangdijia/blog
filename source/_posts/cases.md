@@ -19,6 +19,8 @@ tags:
 - [小白软件宝库](http://baoku.xiaobai.com)
 - [茂名广视网](http://www.mmgsw.com)
 - [宝物交易网](http://www.8591.com.tw)
+- [宝物交易网HK](http://www.8591.com.hk)
+- [100室内设计](http://www.100.com.tw)
 
 ## 项目
 
@@ -27,10 +29,13 @@ tags:
 - 上海计算机安全项目
 - 超级巡警云查杀服务
 - 小白软件管家
+- 数睿即时通讯中台
 
 ## 参与开源项目
 
 - [ThinkPHP](https://github.com/top-think/think)
+- [Laravel Trigger](https://github.com/huangdijia/laravel-trigger)
+- [Laravel Youdu](https://github.com/huangdijia/laravel-youdu)
 
 ## 其他
 
@@ -40,6 +45,12 @@ tags:
 - [jQuery插件jsConfirm-1.0](https://gitee.com/deeka/jsComfirm)
 - [基于jQuery的input提示信息插件inputDefault](https://gitee.com/deeka/inputDefault)
 - [基于jQuery的无刷新上传插件iframeupload](https://gitee.com/deeka/iframeupload)
-- [laravel-ipip](https://github.com/huangdijia/laravel-ipip)
-- [laravel-ssdb](https://github.com/huangdijia/laravel-ssdb)
-- [laravel-accessyou](https://github.com/huangdijia/laravel-accessyou)
+- [Laravel Ipip](https://github.com/huangdijia/laravel-ipip)
+- [Laravel Ssdb](https://github.com/huangdijia/laravel-ssdb)
+- [Laravel Accessyou](https://github.com/huangdijia/laravel-accessyou)
+- [Laravel Mxtong](https://github.com/huangdijia/laravel-mxtong)
+- [Laravel Mitake](https://github.com/huangdijia/laravel-mitake)
+- [Laravel Smspro](https://github.com/huangdijia/laravel-smspro)
+- [Laravel Twsms](https://github.com/huangdijia/laravel-twsms)
+- [Laravel Icomet](https://github.com/huangdijia/laravel-icomet)
+- [Laravel Gateway Worker](https://github.com/huangdijia/laravel-gateway-worker)
