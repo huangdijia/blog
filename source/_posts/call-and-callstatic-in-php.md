@@ -1,12 +1,11 @@
 ---
 title: PHP 的 __call 和 __callStatic
 date: 2019-10-15 08:28:35
-tags: [PHP],
+tags: [PHP]
 categories: 后端
 ---
 
 ~~~php
-<?php
 class Foo
 {
     public function __call($name, $arguments)
