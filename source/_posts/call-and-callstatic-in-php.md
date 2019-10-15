@@ -6,6 +6,7 @@ categories: 后端
 ---
 
 ~~~php
+<?php
 class Foo
 {
     public function __call($name, $arguments)
