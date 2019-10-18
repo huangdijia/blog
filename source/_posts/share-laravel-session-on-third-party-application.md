@@ -497,4 +497,15 @@ SESSION_LIFETIME=120
 SESSION_DOMAIN=.a.com
 ~~~
 
+### 特别注意 `!!!!`
+
+如果第三方应用 PHP 版本低于 `7.0`，需要设置 session_id 长度与 Laravel 项目（session_id 长度为 40）的一致
+
+~~~php
+ini_set('session.hash_function', 1);
+ini_set('session.hash_bits_per_character', 4);
+~~~
+
+Laravel 设置认证信息也需注意，`auth()->login($user)` 会更新 session_id，可以改用 `auth()->setUser($user)`
+
 最后，如果你有更好的方案，请留言给我，一起交流共同进步。
