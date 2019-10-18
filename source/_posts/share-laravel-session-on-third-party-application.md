@@ -502,6 +502,7 @@ SESSION_DOMAIN=.a.com
 如果第三方应用 PHP 版本低于 `7.0`，需要设置 session_id 长度与 Laravel 项目（session_id 长度为 40）的一致
 
 ~~~php
+// PHP_VERSION < 7.0
 ini_set('session.hash_function', 1);
 ini_set('session.hash_bits_per_character', 4);
 ~~~
