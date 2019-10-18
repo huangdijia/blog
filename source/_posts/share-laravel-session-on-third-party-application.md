@@ -11,7 +11,7 @@ Laravel 框架越来越被PHP开发者青睐，被应用得越来越广泛，大
 
 <!--more-->
 
-![图片](https://upload-images.jianshu.io/upload_images/4739005-9132cb20eefd0942.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)
+![撸起袖子加油干](http://www.315che.net/uploads/allimg/170329/225TQ495-0.jpg)
 
 一鼓作气，写完了发现`Session`不兼容，去Google百度了一下，也没找到什么好方案，没办法自己分析一下。
 
@@ -497,7 +497,7 @@ SESSION_LIFETIME=120
 SESSION_DOMAIN=.a.com
 ~~~
 
-### 特别注意 `!!!!`
+## 特别注意 `!!!!`
 
 如果第三方应用 PHP 版本低于 `7.0`，需要设置 session_id 长度与 Laravel 项目（session_id 长度为 40）的一致
 
