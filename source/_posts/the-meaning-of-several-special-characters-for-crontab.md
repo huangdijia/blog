@@ -1,5 +1,5 @@
 ---
-title: crontab几个特殊字符的含义
+title: crontab 几个特殊字符的含义
 date: 2019-05-06 08:12:02
 tags: [crontab, linux, centos, ubuntu, debian, macos]
 categories: 后端
@@ -22,5 +22,5 @@ categories: 后端
 
 ~~~bash
 * 0 9 5L 最后一个周五早上9点
-* 0 9 6#3 第三个周五
+* 0 9 6#3 当月第3个星期六
 ~~~
