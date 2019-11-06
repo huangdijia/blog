@@ -19,6 +19,7 @@
     "hexo-generator-search": "^2.4.0",
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
+    "hexo-next-share": "github:theme-next/hexo-next-share",
     "hexo-next-utteranc": "github:theme-next/hexo-next-utteranc",
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-less": "^0.2.0",

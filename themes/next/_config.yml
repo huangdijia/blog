@@ -683,6 +683,18 @@ utteranc:
   # If you want to modify priority, please config in **hexo**
   #priority:
 
+# share.js
+# See: https://github.com/overtrue/share.js
+# networks: weibo,qq,wechat,tencent,douban,qzone,linkedin,diandian,facebook,twitter,google
+sharejs:
+  enable: true
+  cdn:
+    js: //cdn.jsdelivr.net/npm/social-share.js@1/dist/js/social-share.min.js
+    css: //cdn.jsdelivr.net/npm/social-share.js@1/dist/js/social-share.min.css
+  networks: weibo,qq,wechat,tencent,douban,qzone,linkedin,diandian,facebook,twitter,google
+  wechat_qrcode:
+    title: share.title
+    prompt: share.prompt
 
 # ---------------------------------------------------------------
 # Post Widgets & Content Sharing Services
