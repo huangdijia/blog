@@ -19,9 +19,9 @@
         language: '{{ theme.gitalk.language }}',
       {%- endif %}
       {%- if theme.gitalk.auto_create == true %}
-        createIssueManually: true,
-      {% else %}
         createIssueManually: false,
+      {% else %}
+        createIssueManually: true,
       {%- endif %}
       enableHotKey: true,
       distractionFreeMode: '{{ theme.gitalk.distraction_free_mode }}'
