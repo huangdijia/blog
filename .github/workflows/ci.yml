@@ -35,6 +35,12 @@ jobs:
           npm i -g hexo-cli
           npm i
 
+      - name: Indexing algolia
+        env:
+          HEXO_ALGOLIA_ADMIN_KEY: ${{secrets.HEXO_ALGOLIA_ADMIN_KEY}}
+        run: |
+          hexo algolia --indexing-key=$HEXO_ALGOLIA_ADMIN_KEY
+
       - name: Deploy hexo
         run: |
           hexo g -d

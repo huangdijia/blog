@@ -120,3 +120,8 @@ gitment:
   repo: huangdijia.github.io
   client_id: a1d239633e6fdfb97201
   client_secret: 5e4cbc30dbc033718ac2ac7697775d333f4fe38c
+
+algolia:
+  applicationID: 2M58E60BF3
+  apiKey: 87681067fde0c17db22b006ada36146c # only search
+  indexName: Blog
