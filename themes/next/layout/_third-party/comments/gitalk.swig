@@ -18,6 +18,12 @@
       {% else %}
         language: '{{ theme.gitalk.language }}',
       {%- endif %}
+      {%- if theme.gitalk.auto_create == true %}
+        createIssueManually: true,
+      {% else %}
+        createIssueManually: false,
+      {%- endif %}
+      enableHotKey: true,
       distractionFreeMode: '{{ theme.gitalk.distraction_free_mode }}'
     });
     gitalk.render('gitalk-container');
