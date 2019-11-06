@@ -659,7 +659,7 @@ livere_uid: # <your_uid>
 # Demo: https://gitalk.github.io
 # For more information: https://github.com/gitalk/gitalk
 gitalk:
-  enable: true
+  enable: false
   github_id: huangdijia # GitHub repo owner
   repo: huangdijia.github.io # Repository name to store issues
   client_id: a1d239633e6fdfb97201 # GitHub Application Client ID
@@ -671,6 +671,17 @@ gitalk:
   # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
   language: zh-CN
   auto_create: true
+
+# Demo: https://utteranc.es/  http://trumandu.github.io/about/
+utteranc:
+  enable: true
+  repo: huangdijia/huangdijia.github.io #Github repo such as :TrumanDu/comments
+  pathname: title
+  # theme: github-light,github-dark,github-dark-orange
+  theme: github-light
+  cdn: https://utteranc.es/client.js
+  # If you want to modify priority, please config in **hexo**
+  #priority:
 
 
 # ---------------------------------------------------------------
