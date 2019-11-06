@@ -96,7 +96,7 @@ menu:
   "分类": /categories/ || th
   "标签": /tags/ || tags
   "归档": /archives/ || archive
-  "作品": /cases || th
+  "作品": /cases || fa
   "关于": /about/ || user
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
