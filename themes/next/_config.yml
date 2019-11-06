@@ -1088,3 +1088,19 @@ vendors:
 css: css
 js: js
 images: images
+
+next_nightmode:
+  enable: true
+  # FontAwesome or ForkAwesome icon in sidebar button.
+  icon: lightbulb-o
+  # Text for sidebar button.
+  text:  暗黑模式
+  # If true, when you disable Night Mode, Hexo will show warning messages in your console.
+  reminder: true
+  # Debugger for alpha option below.
+  debugger: false
+  # Support experimental prefers-color-scheme media query.
+  # For now if alpha mode enabled, sidebar button will be disabled.
+  # The only way to toggle night mode is your system color scheme settings.
+  # Also see: https://caniuse.com/#feat=prefers-color-scheme.
+  alpha: false
