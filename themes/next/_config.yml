@@ -559,7 +559,7 @@ pangu: false
 # Quicklink Support
 # For more information: https://github.com/GoogleChromeLabs/quicklink
 quicklink:
-  enable: true
+  enable: false
 
   # Quicklink (quicklink.umd.js script) is loaded on demand.
   # Add `quicklink: true` in Front-matter of the page or post you need.
