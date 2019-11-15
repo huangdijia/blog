@@ -1,7 +1,8 @@
 ---
 title: 如何正确的在 Lumen 中启用 Notification
 date: 2019-11-15 18:30:27
-tags:
+tags: [lumen, notification]
+category: 后端
 ---
 
 ## 安装 `illuminate/notifications`
