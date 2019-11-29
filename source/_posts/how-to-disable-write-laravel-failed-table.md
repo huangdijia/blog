@@ -7,14 +7,14 @@ categories: 后端
 
 ## 烦恼从何而来
 
-用 Laravel 的小伙伴应该都会用到 Queue， 从[手册](https://laravel.com/docs/6.x/queues#dealing-with-failed-jobs)任务失败后会将队列信息记录到 `failed_jobs` 表，可以通过
+用 Laravel 的小伙伴应该都会用到 Queue， 从[手册](https://laravel.com/docs/6.x/queues#dealing-with-failed-jobs) Job 失败后会将队列信息记录到 `failed_jobs` 表，可以通过
 
 ~~~bash
 php artisan queue:failed-table
 php artisan migrate
 ~~~
 
-作用主要是为了方便分析失败原因和任务重试，这都很好理解。当 `failed_jobs` 没有被创建的时候，会报这样一个异常：
+作用主要是为了方便分析失败原因和 Job 重试（本身支持 retry），这都很好理解。当 `failed_jobs` 没有被创建的时候，会报这样一个异常：
 
 ~~~php
 SQLSTATE[42S02]: Base table or view not found: 1146 Table 'a8591.failed_jobs' doesn't exist
@@ -28,7 +28,7 @@ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'a8591.failed_jobs' do
 
 ## 方法一：重写 Job 类 fail 方法
 
-只要 IDE 强大些，跳跳跳，跳转一下代码，很容易找到 `vendor/illuminate/queue/Jobs/Job.php` 处理失败任务的逻辑位置：
+只要 IDE 强大些，跳跳跳，跳转一下代码，很容易找到 `vendor/illuminate/queue/Jobs/Job.php` 处理 Job 失败的逻辑位置：
 
 ~~~php
 // ...
