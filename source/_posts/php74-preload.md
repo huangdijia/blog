@@ -94,7 +94,7 @@ composer g require ayesh/composer-preload
 composer preload
 ~~~
 
-### 期待官方支持
+## 期待官方支持
 
 已经有人向 composer 提交了[Issue](https://github.com/composer/composer/issues/7777)，值得期待
 
