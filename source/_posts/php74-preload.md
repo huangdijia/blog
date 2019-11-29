@@ -62,7 +62,7 @@ composer require ayesh/composer-preload
 composer g require ayesh/composer-preload
 ~~~
 
-### 增加 composer.json 配置 `extra`：
+### `composer.json` 配置
 
 ~~~json
 {
@@ -88,7 +88,7 @@ composer g require ayesh/composer-preload
 }
 ~~~
 
-### 生成 `vendor/preload.php`
+### `vendor/preload.php` 生成
 
 ~~~bash
 composer preload
