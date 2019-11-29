@@ -92,3 +92,24 @@ protected function registerFailedJobServices()
 * 否则使用 `NullFailedJobProvider` 处理，也就是啥都不干的意思
 
 最终发现原来`开关`是存在的，只是官方没有明确说明。
+
+找到 `config/queue.php`, do it!
+
+~~~php
+// ...
+/*
+|--------------------------------------------------------------------------
+| Failed Queue Jobs
+|--------------------------------------------------------------------------
+|
+| These options configure the behavior of failed queue job logging so you
+| can control which database and table are used to store the jobs that
+| have failed. You may change them to any database / table you wish.
+|
+*/
+
+'failed' => [
+    // 'database' => env('DB_CONNECTION', 'mysql'),
+    // 'table' => env('QUEUE_FAILED_TABLE', 'failed_jobs'),
+],
+~~~
