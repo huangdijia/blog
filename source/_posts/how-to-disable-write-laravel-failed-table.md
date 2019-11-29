@@ -1,5 +1,5 @@
 ---
-title: how-to-disable-write-laravel-failed-table
+title: 如何取消 failed_jobs
 date: 2019-11-29T00:24:06.091Z
 tags: [Laravel, queue, faild_jobs]
 categories: 后端
