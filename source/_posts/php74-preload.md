@@ -23,7 +23,7 @@ categories: 后端
 
 ## 自己实现
 
-vi vendor/proload.php
+针对 composer，可以直接生成 `vendor/proload.php`
 
 ~~~php
 <?php
