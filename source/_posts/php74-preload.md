@@ -5,7 +5,11 @@ tags: [php, preload]
 categories: 后端
 ---
 
-期待已久的 [PHP7.4](https://www.php.net/archive/2019.php#2019-11-28-1) 终于发布了，个人最期待的功能还是 [Opcache Preloading](https://www.php.net/manual/zh/opcache.configuration.php#ini.opcache.preload)，包含 2 配置参数：
+期待已久的 [PHP7.4](https://www.php.net/archive/2019.php#2019-11-28-1) 终于发布了，个人最期待的功能还是 [Opcache Preloading](https://www.php.net/manual/zh/opcache.configuration.php#ini.opcache.preload)
+
+<!--more-->
+
+包含 2 配置参数：
 
 * opcache.preload string
 
