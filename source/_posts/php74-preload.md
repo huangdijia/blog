@@ -94,9 +94,9 @@ composer g require ayesh/composer-preload
 composer preload
 ~~~
 
-## 期待官方支持
+## 官方支持
 
-已经有人向 composer 提交了[Issue](https://github.com/composer/composer/issues/7777)，值得期待
+目前 composer 官方还没支持，已经有人向 composer 提交了[Issue](https://github.com/composer/composer/issues/7777)，据说 2.0 里程碑版本会增加支持，值得期待。
 
 ## 性能提升
 
