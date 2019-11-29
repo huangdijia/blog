@@ -48,7 +48,7 @@ foreach (array_unique($files) as $file) {
 
 ## 第三方包
 
-Github 上也有大神放出 composer 扩展包 [Composer-Preload](https://github.com/Ayesh/Composer-Preload)，可通过简单配置
+Github 上也有大神放出 composer 扩展包 [Composer-Preload](https://github.com/Ayesh/Composer-Preload)，可通过简单配置实现。
 
 ### 当前项目安装
 
