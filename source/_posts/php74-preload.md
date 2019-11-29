@@ -7,7 +7,10 @@ categories: 后端
 
 期待已久的 [PHP7.4](https://www.php.net/archive/2019.php#2019-11-28-1) 终于发布了，个人最期待的功能还是 [Opcache Preloading](https://www.php.net/manual/zh/opcache.configuration.php#ini.opcache.preload)。
 
-官方以 zend framework 测试 `30~50 %` 的性能提升。
+* 为了预加载文件，您需要编写自定义PHP脚本
+* 此脚本在服务器启动时执行一次
+* 所有预加载的文件都可在内存中用于所有请求
+* 在重新启动服务器之前，对源文件所做的更改不会产生任何影响
 
 <!--more-->
 
@@ -85,7 +88,10 @@ composer g require ayesh/composer-preload
 composer preload
 ~~~
 
-
 ## 期待官方支持
 
 已经有人向 composer 提交了[Issue](https://github.com/composer/composer/issues/7777)，值得期待
+
+## 性能提升
+
+官方以 zend framework 测试 `30~50 %` 的性能提升。
