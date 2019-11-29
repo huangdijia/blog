@@ -21,7 +21,7 @@ categories: 后端
 
 怎么尝鲜呢？
 
-## 自己实现
+## 简单实现
 
 针对 composer，可以直接生成 `vendor/proload.php`
 
@@ -37,9 +37,21 @@ foreach (array_unique($files) as $file) {
 
 ## 第三方包
 
-Github 上也有大神放出 composer 扩展包 [Composer-Preload](https://github.com/Ayesh/Composer-Preload)，可通过简单配置，执行 `composer preload` 生成 `vendor/preload.php`
+Github 上也有大神放出 composer 扩展包 [Composer-Preload](https://github.com/Ayesh/Composer-Preload)，可通过简单配置
 
-增加 composer.json 配置 `extra`：
+### 当前项目安装
+
+~~~bash
+composer require ayesh/composer-preload
+~~~
+
+### 全局安装
+
+~~~bash
+composer g require ayesh/composer-preload
+~~~
+
+### 增加 composer.json 配置 `extra`：
 
 ~~~json
 {
@@ -64,6 +76,13 @@ Github 上也有大神放出 composer 扩展包 [Composer-Preload](https://githu
     }
 }
 ~~~
+
+### 生成 `vendor/preload.php`
+
+~~~bash
+composer preload
+~~~
+
 
 ## 期待官方支持
 
