@@ -1,7 +1,7 @@
 ---
 title: 如何正确的使用 GitHub Actions 实现 Hexo 博客的 CICD
 date: 2019-09-27 12:42:48
-tags:
+tags: [Github, actions]
 categories: 后端
 ---
 
