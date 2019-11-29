@@ -14,6 +14,8 @@ categories: 后端
 
 <!--more-->
 
+## 配置
+
 包含 2 配置参数：
 
 * opcache.preload string
@@ -24,9 +26,13 @@ categories: 后端
 
 > 考虑到安全因素，禁止以 root 用户预加载代码。该指令方便以其他用户预加载。
 
-怎么尝鲜呢？
+### `php.ini` 配置
 
-## 简单实现
+~~~ini
+opcache.preload=/path/to/project/preload.php
+~~~
+
+### 及时实现
 
 针对 composer，可以直接生成 `vendor/proload.php`
 
@@ -88,7 +94,7 @@ composer g require ayesh/composer-preload
 composer preload
 ~~~
 
-## 期待官方支持
+### 期待官方支持
 
 已经有人向 composer 提交了[Issue](https://github.com/composer/composer/issues/7777)，值得期待
 
