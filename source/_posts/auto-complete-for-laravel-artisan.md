@@ -10,6 +10,8 @@ tags: [laravel, artisan]
 brew install bash-completion@2
 ~~~
 
+<!--more-->
+
 ## 配置 `~/.zshrc` 或 `~/.bash_profile`
 
 ~~~bash
@@ -27,6 +29,12 @@ _artisan()
 }
 complete -F _artisan artisan
 alias artisan='php artisan'
+~~~
+
+如果在 Windows 的 Git-Bash 上出现类似于 `stdout is not a tty` 的错误，只需要把 `ARTISAN_COMMANDS=` 这一行改成:
+
+~~~bash
+ARTISAN_COMMANDS=`php.exe artisan --raw --no-ansi list | sed "s/[[:space:]].*//g"`
 ~~~
 
 ## 效果预览
