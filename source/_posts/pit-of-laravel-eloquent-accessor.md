@@ -12,6 +12,8 @@ categories: 后端
 |1|Jackie|Chan|
 |2|Bruce|Lee|
 
+<!--more-->
+
 ## 模型
 
 ~~~php
