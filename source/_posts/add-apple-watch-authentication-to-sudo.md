@@ -1,8 +1,7 @@
 ---
 title: 将 Apple Watch 身份验证添加到 sudo
 date: 2021-10-14 13:33:41
-tags: MacOS, Apple Watch, Apple, 身份验证
-tags: [php, 正则, regex]
+tags: [MacOS, Apple Watch, Apple, 身份验证]
 categories: MacOS
 ---
 
