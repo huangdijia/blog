@@ -26,8 +26,7 @@ $ sudo 安装
 
 - 为sudo注册新的 PAM 模块：
 
-编辑 `/etc/pam.d/sudo`
-在第 1 行（这是注释）下添加一个新行，其中包含：
+编辑 `/etc/pam.d/sudo`， 在第 1 行（这是注释）下添加一个新行，其中包含：
 
 ```text
 auth       sufficient     pam_watchid.so
