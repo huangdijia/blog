@@ -16,15 +16,17 @@ categories: MacOS
 下载[最新的 ZIP 文件](https://github.com/biscuitehh/pam-watchid/archive/main.zip)
 
 解压缩，默认情况下会创建一个名为`pam-watchid-main`的文件夹
-打开终端并安装它：
+
+- 打开终端并安装它：
 
 ```bash
 $ cd ~/Downloads/pam-watchid-main
 $ sudo 安装
 ```
 
-为sudo注册新的 PAM 模块：
-编辑/etc/pam.d/sudo
+- 为sudo注册新的 PAM 模块：
+
+编辑 `/etc/pam.d/sudo`
 在第 1 行（这是注释）下添加一个新行，其中包含：
 
 ```text
