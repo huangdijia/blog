@@ -24,6 +24,15 @@ tags: [macos, brew]
 sudo chown -R $(whoami) /opt/homebrew
 ```
 
+## 配置环境变量
+
+编辑 `~/.zshrc` 文件，添加如下内容：
+
+```bash
+# arm brew environment
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
 ## 导入 Brewfile
 
 ```bash
