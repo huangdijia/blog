@@ -1,5 +1,5 @@
 ---
-title: How to migrate to native Homebrew on an M1 Mac
+title: 如何迁移 homebrew 至 M1 Mac
 date: 2021-11-25 08:12:42
 tags: [macos, brew]
 ---
