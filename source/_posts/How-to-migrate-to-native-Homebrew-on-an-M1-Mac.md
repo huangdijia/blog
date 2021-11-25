@@ -12,6 +12,8 @@ tags: [macos, brew]
 
 得到 `Brewfile` 文件。
 
+<!--more-->
+
 ## M1 Mac 安装 brew
 
 ```bash
