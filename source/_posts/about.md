@@ -36,25 +36,26 @@ tags:
 ### 缓存
 
 - Redis
-- Memcache
+- Memcached
 - Ssdb
 
 ### 框架
 
-- Laravel
+- Laravel/Lumen
 - ThinkPHP
-- JQuery
+- JQuery/Vue
 
 ## 其他
 
 - 服务器运维
+- K8S
 
 ## 关注我
 
 - [GitHub](https://github.com/huangdijia)
 - [Packages](https://packagist.org/packages/huangdijia/)
 - [腾讯微博](http://t.qq.com/huangdijia)
-- [新浪微博](http://www.weibo.com/huangdijia)
+- [推特](http://twitter.com/huangdijia)
 
 ## 联系我
 
