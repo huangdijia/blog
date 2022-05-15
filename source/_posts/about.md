@@ -54,7 +54,7 @@ tags:
 
 - [GitHub](https://github.com/huangdijia)
 - [Packages](https://packagist.org/packages/huangdijia/)
-- [推特](http://twitter.com/huangdijia)
+- [Twitter](http://twitter.com/huangdijia)
 
 ## 联系我
 
