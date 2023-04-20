@@ -18,7 +18,7 @@
         "hexo-generator-index": "^0.2.0",
         "hexo-generator-json-content": "^3.0.1",
         "hexo-generator-search": "^2.4.0",
-        "hexo-generator-sitemap": "^1.2.0",
+        "hexo-generator-sitemap": "^3.0.1",
         "hexo-generator-tag": "^0.2.0",
         "hexo-next-utteranc": "github:theme-next/hexo-next-utteranc",
         "hexo-renderer-ejs": "^0.3.0",
