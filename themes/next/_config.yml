@@ -191,7 +191,7 @@ site_state: true
 social:
   GitHub: https://github.com/huangdijia || github
   E-Mail: mailto:huangdijia@gmail.com || envelope
-  Weibo: https://weibo.com/huangdijia || weibo
+  # Weibo: https://weibo.com/huangdijia || weibo
   # FB Page: https://www.facebook.com/huangdijia || facebook
   # Google: https://plus.google.com/yourname || google
   # Twitter: https://twitter.com/yourname || twitter
