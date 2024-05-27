@@ -728,6 +728,9 @@ tencent_analytics: 27066461
 # Tencent MTA
 tencent_mta: 500702008
 
+# Microsoft Clarity
+clarity_analytics: mieuyekodt
+
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
