@@ -1,7 +1,8 @@
 ---
 title: 多 PHP 开发环境
 date: 2024-07-11 09:12:40
-tags:
+tags: [php, homebrew]
+categories: 后端
 ---
 
 > 本文适用于 M1 或更新版本 macOS 系统，Linux 可参考思路。
