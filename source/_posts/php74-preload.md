@@ -34,7 +34,7 @@ opcache.preload=/path/to/project/preload.php
 
 ### 及时实现
 
-针对 composer，可以直接生成 `vendor/proload.php`
+针对 composer，可以直接生成 `vendor/preload.php`
 
 ~~~php
 <?php
